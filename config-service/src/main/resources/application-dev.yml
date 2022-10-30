@@ -1,6 +1,7 @@
 server:
   port: 8082
 
+
 spring:
   application:
     name: config
@@ -9,3 +10,9 @@ spring:
       server:
         git:
           uri: file:///C:/Users/dimik/IdeaProjects/MARKET/configs
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8083/eureka/

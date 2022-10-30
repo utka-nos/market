@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+
+spring:
+  data:
+    mongodb:
+      host: 192.168.0.110
+      port: 27017
+      password: 1234qwer
+      username: root
+      database: market
+
+springdoc:
+  api-docs:
+    path: /api
+

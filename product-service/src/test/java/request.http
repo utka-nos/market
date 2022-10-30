@@ -1,0 +1,21 @@
+POST http://localhost:8081/product
+Accept: application/json
+Content-Type: application/json
+
+
+{
+  "name": "iphone",
+  "properties": {
+    "weight": "100",
+    "model": "XR"
+  }
+}
+
+###
+GET http://localhost:8081/product/all
+Accept: application/json
+
+###
+DELETE http://localhost:8081/product/{{productId}}
+Accept: application/json
+Content-Type: application/json

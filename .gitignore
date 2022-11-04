@@ -10,6 +10,8 @@ helper
 */.pnp
 *.pnp.js
 
+*.iml
+
 # testing
 */coverage
 

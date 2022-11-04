@@ -1,0 +1,43 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: lb://product
+          predicates:
+            - Path=/product/**
+        - id: user
+          uri: lb://user
+          predicates:
+            - Path=/user/**
+        - id: eureka
+          uri: http://localhost:8083
+          predicates:
+            - Path=/
+
+  security:
+    oauth2:
+      # Для spring-boot-starter-oauth2-client
+      client:
+        registration:
+          keycloak:
+            client-id: market_client
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://192.168.0.110:8484/auth/realms/market_realm
+            user-name-attribute: preferred_username
+
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://localhost:8083/eureka/
+
+logger:
+  level:
+    root: INFO

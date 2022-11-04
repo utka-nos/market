@@ -2,3 +2,5 @@
 .idea
 MARKET.iml
 helper
+*/node_modules/*
+*/build/*
